@@ -12,7 +12,17 @@ const TaskController = {
           console.error(error);
         }
       },
-    
+      async getAll(req, res) {
+        try {
+          const { page = 1, limit = 10 } = req.query;
+          const task = await Task.find()
+            .limit(limit)
+            .skip((page - 1) * limit);
+          res.send(task);
+        } catch (error) {
+          console.error(error);
+        }
+      },
 }
 
 
