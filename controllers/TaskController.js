@@ -51,6 +51,15 @@ const TaskController = {
             console.error(error);
         }
     },
+    async delete(req, res) {
+        try {
+            const task = await Task.findByIdAndDelete(req.params._id)
+            res.send({ message: 'Tarea eliminada', task })
+        } catch (error) {
+            console.error(error)
+            res.status(500).send({ message: 'Ha habido un problema al eliminar la tarea' })
+        }
+    },
 }
 
 
