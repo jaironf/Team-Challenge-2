@@ -6,12 +6,13 @@ const {JWT_SECRET} = process.env;
 const TaskController = {
     async create(req, res) {
         try {
-          const task = await Task.create(req.body.title);
+          const task = await Task.create(req.body);
           res.status(201).send({ message: "Tarea creada con exito", task });
         } catch (error) {
           console.error(error);
         }
       },
+    
 }
 
 
