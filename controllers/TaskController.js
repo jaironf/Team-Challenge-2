@@ -23,6 +23,14 @@ const TaskController = {
           console.error(error);
         }
       },
+      async getById(req, res) {
+        try {
+            const task = await Task.findById(req.params._id)
+            res.send(task)
+        } catch (error) {
+            console.error(error);
+        }
+    },
 }
 
 
