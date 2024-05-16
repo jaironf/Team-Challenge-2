@@ -7,7 +7,7 @@ const TaskSchema = new mongoose.Schema({
         required: [true, "Por favor rellene todos los campos"]
     },
     completed:{
-        type:String,
+        type: String,
         required: [true, "Por favor rellene todos los campos"]
     }, 
 },{ timestamps: true });
